@@ -10,15 +10,15 @@ describe('parseJSON', function(){
     });
   });
 
-  it('should throw an error for invalid stringified JSON', function(){
-    unparseableStrings.forEach(function(test){
-      var fn = function(){
+  it('should throw an error for invalid stringified JSON', function(){ debugger;
+    unparseableStrings.forEach(function(test){ debugger;
+      var fn = function(){ debugger;
         parseJSON(test);
       }
       // if you'd prefer, you can write your version of parseJSON 
       // so that it passes this test instead of the one on line 21. 
-      // expect(parseJSON(test)).to.equal(undefined);
-      expect(fn).to.throw(SyntaxError);
+      expect(parseJSON(test)).to.equal(undefined);
+      //expect(fn).to.throw(SyntaxError);
     });
   });
 
