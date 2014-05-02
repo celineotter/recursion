@@ -8,13 +8,12 @@
 var getElementsByClassName = function (className) {
     var $result = [];
 
-    function checkChildNodes (element) {
+    (function checkChildNodes (element) {
 		if (element.classList.contains(className)) $result.push(element);
 		_.each(element.childNodes, function (childNode) {
 			if (childNode.nodeType === 1) checkChildNodes(childNode);
 		});
-	}
-    checkChildNodes(document.body);
+	})(document.body);
 
     return $result;
 };
